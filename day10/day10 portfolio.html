@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandar Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            min-height: 100vh;
+        }
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 70px;
+            background: #000;
+        }
+
+        h1,
+        h2 {
+            color: white;
+        }
+
+        /* NAVBAR */
+        .nav-wrap h2,
+        .nav-wrap ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-wrap {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            /* border: 1px solid rgba(255, 255, 255, 0.2); */
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        nav ul li a {
+            font-size: 18px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HERO */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+            color: white;
+            min-height: calc(100vh + 70px);
+        }
+
+        .hero-img {
+            width: 140px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+        }
+
+        .hero-subtitle {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .btn-wrap {
+            margin-top: 30px;
+        }
+
+        .hero-btn {
+            text-decoration: none;
+            background-image: linear-gradient(to right, #252525 0%, #252525 50%, #f0f0f0 50%, #f0f0f0 100%);
+            color: #fff;
+            padding: 15px 45px;
+            text-transform: uppercase;
+            background-size: 200% auto;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: background-position 0.5s ease, color 0.5s ease;
+        }
+
+        .hero-btn:hover {
+            background-position: right center;
+            font-weight: 700;
+            color: #000;
+        }
+
+
+
+        /* ABOUT */
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            padding: 60px 20px;
+            text-align: center;
+            /* background: #000; */
+            background-image:
+                radial-gradient(white 01px, transparent 1px);
+            background-size: 35px 35px;
+        }
+
+        .project-grid {
+            display: grid;
+            justify-content: space-between;
+            /* width: 100%; */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: .3s;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.05);
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+            /* background: #f4f4f4; */
+        }
+
+        .form-wrap {
+            transform-origin: center;
+            width: 600px;
+            padding: 60px 40px;
+            background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+            border-radius: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-grad {
+            background-image: linear-gradient(to right, #252525 0%, #252525 50%, #f0f0f0 50%, #f0f0f0 100%);
+            padding: 15px 25px;
+            /* text-transform: uppercasse; */
+            transition: .5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+
+        .btn-grad:hover {
+            background-position: right center;
+            font-weight: 700;
+            color: #000;
+            box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.6);
+
+        }
+
+        /* FOOTER */
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            background: black;
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        footer p {
+            font-size: 12px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="nav-wrap">
+        <nav class="navbar">
+            <h2>Mandar Patil</h2>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero section" id="hero">
+        <div class="hero-content">
+            <img src="../day10/asset/1753314046420.jpg" class="hero-img">
+
+            <h1 class="hero-title">Hi, I'm Mandar</h1>
+
+            <p class="hero-subtitle">
+                Frontend Developer building modern web experiences
+            </p>
+
+            <div class="btn-wrap">
+                <a href="#projects" class="hero-btn">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about section" id="about">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <p>
+                I am a frontend developer learning modern web technologies
+                and building interactive websites.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects section" id="projects">
+        <div style="margin-top: 5%;">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="../day10/asset/dashboard.png" alt="Project">
+                    <h3>React Dashboard</h3>
+                    <p>A lead management dashboard built with React that aggregates leads from multiple landing pages
+                        and domains into a single interface.</p>
+                    <div class="project-buttons" style="margin-top: 20px;" style="margin-top: 20px;">
+                        <a class="btn-grad " href="http://leadsdashboard.arkentechpublishing.com/dashboard"
+                            target="_blank"> <i class="fa-solid fa-eye"></i> Live Demo</a>
+                        <a class="btn-grad" href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../day10/asset/portfolio.png" alt="Project">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive developer portfolio built to highlight my projects, technical skills, and
+                        experience.</p>
+                    <div class="project-buttons" style="margin-top: 20px;">
+                        <a class="btn-grad " href="https://mandarpatil13.netlify.app/" target="_blank"> <i
+                                class="fa-solid fa-eye"></i>
+                            Live Demo</a>
+                        <a class="btn-grad" href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../day10/asset/typing-speed-test.png" alt="Project">
+                    <h3>Typing Speed Test</h3>
+                    <p>A typing speed tester that evaluates how fast and accurately users can type in a timed challenge.
+                        ⌨️⚡</p>
+                    <div class="project-buttons" style="margin-top: 20px;">
+                        <a class="btn-grad " href="https://testtypingspeedgame.netlify.app/"> <i
+                                class="fa-solid fa-eye"></i> Live Demo</a>
+                        <a class="btn-grad" href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact section" id="contact">
+        <div class="form-wrap">
+            <h2 style="color: #000;">Contact Me</h2>
+            <form action="https://google.com" class="contact-form">
+
+                <input type="text" placeholder="Your Name*" required>
+                <input type="email" placeholder="Your Email*" required>
+                <textarea placeholder="Your Message"></textarea>
+
+                <button class="btn-grad" type="submit">
+                    Send Message
+                </button>
+            </form>
+        </div>
+        <div>
+            <footer>
+                <p>© 2026 Mandar. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    <script>
+
+        gsap.registerPlugin(ScrollTrigger);
+        /* HERO ANIMATION */
+        const tl = gsap.timeline();
+
+        tl.from(".navbar", {
+            y: -60,
+            opacity: 0,
+            duration: 1
+        })
+
+            .from(".hero-img", {
+                scale: 0,
+                duration: .8
+            })
+
+            .from(".hero-title", {
+                y: 50,
+                opacity: 0,
+                duration: .8
+            })
+
+            .from(".hero-subtitle", {
+                y: 40,
+                opacity: 0,
+                duration: .8
+            })
+
+            .from(".hero-btn", {
+                y: 40,
+                opacity: 0,
+                duration: .8
+            })
+
+
+        gsap.fromTo(".form-wrap",
+            {
+                scale: 0.6,
+                opacity: 0
+            },
+            {
+                scale: 1,
+                opacity: 1,
+            }
+        )
+
+        /* PROJECT CARDS */
+        gsap.utils.toArray(".project-card").forEach((card) => {
+
+            gsap.from(card, {
+                y: 40,
+                opacity: 0,
+                duration: .8,
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%"
+                }
+            });
+
+        });
+
+        /* SECTION SCROLL ANIMATION */
+        gsap.utils.toArray(".section").forEach((section) => {
+
+            gsap.from(section, {
+                opacity: 0,
+                y: 60,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%"
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
