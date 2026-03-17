@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 300px;
+            background-color: #e2e2e2;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        input {
+            height: 40px;
+            outline: none;
+            border: none;
+            padding: 0 20px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        button {
+            border: none;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h2>Calculator</h2>
+        <input type="text" id="display">
+
+        <div>
+            <div>
+                <button onclick="press('7')">7</button>
+                <button onclick="press('8')">8</button>
+                <button onclick="press('9')">9</button>
+            </div>
+            <div>
+                <button onclick="press('4')">4</button>
+                <button onclick="press('5')">5</button>
+                <button onclick="press('6')">6</button>
+            </div>
+            <div>
+                <button onclick="press('1')">1</button>
+                <button onclick="press('2')">2</button>
+                <button onclick="press('3')">3</button>
+            </div>
+            <div>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="press('0')">0</button>
+                <button onclick="equalsTo()">=</button>
+            </div>
+        </div>
+
+        <div>
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<script src="index.js"></script>
+
+</html>
